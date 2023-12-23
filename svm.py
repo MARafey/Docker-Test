@@ -10,14 +10,14 @@ from getEmbeddings import getEmbeddings
 import numpy as np
 from sklearn.svm import SVC
 import matplotlib.pyplot as plt
-# import scikitplot.plotters as skplt
+import scikitplot.plotters as skplt
 import os
 
 
-# def plot_cmat(yte, ypred):
-#     '''Plotting confusion matrix'''
-#     skplt.plot_confusion_matrix(yte,ypred)
-#     plt.show()
+def plot_cmat(yte, ypred):
+    '''Plotting confusion matrix'''
+    skplt.plot_confusion_matrix(yte,ypred)
+    plt.show()
 
 # Read the data
 if not os.path.isfile('./xtr.npy') or \
@@ -44,4 +44,4 @@ n = (yte != y_pred).sum()
 print("Accuracy = " + format((m-n)/m*100, '.2f') + "%")   # 88.42%
 
 # Draw the confusion matrix
-# plot_cmat(yte, y_pred)
+plot_cmat(yte, y_pred)
